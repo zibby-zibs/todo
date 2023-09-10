@@ -44,7 +44,6 @@ const DatePick = (props: Props) => {
 
     getDaysInMonthWithWeekdays(year, month);
     setDay(date?.getDate());
-    console.log(date);
   }, [date]);
   return (
     <main className="h-fit w-fit" onClick={() => SetAllowScroll(true)}>

@@ -28,8 +28,6 @@ const DateList = (props: Props) => {
   };
   useEffect(() => {
     if (allowScroll) {
-      console.log("scrolleed");
-
       scroller();
       setAllowScroll(false);
     }

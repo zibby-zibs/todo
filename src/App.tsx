@@ -22,34 +22,6 @@ function App() {
   const setIsEditTodo = useDates((state) => state.setIsEditTodo);
   const modalRefs = useRef<HTMLElement>(null);
 
-  // function getDaysInMonthWithWeekdays(
-  //   year: number | undefined,
-  //   month: number | undefined
-  // ) {
-  //   const days: DateRes[] | null = [];
-  //   const startDate = moment({ year, month, day: 1 });
-  //   const endDate = moment(startDate).endOf("month");
-
-  //   while (startDate.isSameOrBefore(endDate, "day")) {
-  //     days.push({
-  //       date: startDate.format("YYYY-MM-DD"),
-  //       dayOfWeek: startDate.format("ddd"),
-  //       dayOfWeekText: startDate.day(),
-  //     });
-  //     startDate.add(1, "day");
-  //   }
-
-  //   setResult(days);
-  // }
-
-  // useEffect(() => {
-  //   setYear(date?.getFullYear());
-  //   setMonth(date?.getMonth());
-
-  //   getDaysInMonthWithWeekdays(year, month);
-  //   console.log(date);
-  // }, [date]);
-
   const checkBeforeClose = (event: any) => {
     if (modalRefs.current && !modalRefs.current.contains(event.target)) {
       setIsCreateTodo(false);
@@ -58,28 +30,6 @@ function App() {
     }
   };
 
-  const isInsideAside = (target: any, ref: any) => {
-    if (!ref.current) return false;
-    return ref.current.contains(target);
-  };
-
-  // const checkBeforeClose = (event: any) => {
-  //   // if (
-  //   //   // !isTodoDetail &&
-  //   //   // !isCreateTodo &&
-  //   //   // !isEditTodo &&
-  //   //   !isInsideAside(event.target, modalRefs)
-  //   // ) {
-  //   //   setIsCreateTodo(false);
-  //   //   setIsEditTodo(false);
-  //   //   setIsTodoDetail(false);
-  //   //   // Close the modal or perform your desired action
-  //   // }
-
-  //   if (isInsideAside(event.target, modalRefs)) {
-  //     setIsCreateTodo(false);
-  //   }
-  // };
   return (
     <main className="px-4 xl:px-5">
       <Header />
@@ -98,7 +48,7 @@ function App() {
               }}
             ></div>
           )}
-          {/* <div className="fixed bottom-0 left-0 transition-all duration-500 ease-in-out min-h-[80vh] max-h-[80vh] min-w-[100vw]  max-w-screen overflow-y-auto bg-white xl:relative flex justify-center xl:min-w-fit xl:max-w-none"> */}
+
           {!isTodoDetail && !isCreateTodo && !isEditTodo && (
             <aside
               ref={modalRefs}
@@ -131,24 +81,8 @@ function App() {
               <EditTodo />
             </aside>
           )}
-          {/* </div> */}
         </aside>
       </section>
-      {/* <Calendar
-        mode="single"
-        selected={date}
-        onDayClick={setDate}
-        className="rounded-md border"
-      />
-      <div>
-        {result?.map((day: DateRes) => (
-          <div key={day.date}>
-            <span>{day.date}</span>
-            <span>{day.dayOfWeek}</span>
-            <span>{day.dayOfWeekText}</span>
-          </div>
-        ))}
-      </div> */}
     </main>
   );
 }
