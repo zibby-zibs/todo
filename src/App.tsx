@@ -39,7 +39,7 @@ function App() {
         <aside className="w-full xl:max-w-[840px] overflow-x-auto">
           <DateList />
           <ToDos />
-          <aside className="xl:hidden">
+          <aside className="xl:hidden mt-4">
             <InputMobile />
           </aside>
         </aside>
