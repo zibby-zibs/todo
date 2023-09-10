@@ -32,7 +32,7 @@ function App() {
   };
 
   return (
-    <main className="px-4 xl:px-5">
+    <main className="px-4 xl:px-5 pb-4">
       <Header />
       <Greeting />
       <section className="relative flex flex-col xl:flex-row gap-[40px] items-start justify-center">
