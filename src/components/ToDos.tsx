@@ -145,7 +145,7 @@ const ToDos = (props: Props) => {
             nextLabel={next()}
             breakLabel={"..."}
             containerClassName={
-              "flex gap-2 items-center justify-center min-w-full font-workS text-[14px] font-medium relative max-w-full overflow-x-auto pl-[100px] sm:pl-0"
+              "flex gap-2 items-center justify-center min-w-full font-workS text-[14px] font-medium relative max-w-full overflow-x-auto pl-[100px] sm:pl-0 scrollbar-none"
             }
             activeClassName={"bg-gray-200 rounded-full py-[12px] px-[18px]"}
             previousClassName=" xl:absolute xl:left-0"

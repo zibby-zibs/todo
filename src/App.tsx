@@ -12,6 +12,7 @@ import { useDates } from "./lib/store/useDates";
 import TodoDetails from "./components/TodoDetails";
 import CreateTodo from "./components/CreateTodo";
 import EditTodo from "./components/EditTodo";
+import InputMobile from "./components/InputMobile";
 
 function App() {
   const isCreateTodo = useDates((state) => state.isCreateTodo);
@@ -38,6 +39,9 @@ function App() {
         <aside className="w-full xl:max-w-[840px] overflow-x-auto">
           <DateList />
           <ToDos />
+          <aside className="xl:hidden">
+            <InputMobile />
+          </aside>
         </aside>
         <aside>
           {(isTodoDetail || isCreateTodo || isEditTodo) && (
