@@ -22,7 +22,7 @@ const Greeting = (props: Props) => {
         </p>
       </article>
       <Button
-        className="flex gap-2 items-center"
+        className="gap-2 items-center hidden xl:flex"
         onClick={() => {
           setIsTodoDetail(false);
           setIsEditTodo(false);
