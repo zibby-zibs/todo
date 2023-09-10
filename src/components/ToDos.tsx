@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/ban-types */
 import React, { useEffect, useState } from "react";
@@ -105,7 +106,7 @@ const ToDos = (props: Props) => {
                 className="bg-[#F9FAFB] border-b border-gray-200 w-full flex items-center justify-between px-6 py-4"
               >
                 <div className="flex gap-2 items-center">
-                  <input type="checkbox" onClick={() => {}} />
+                  <input type="checkbox" checked={todo.completed} />
                   <article
                     className="cursor-pointer ml-[12px]"
                     onClick={() => {
@@ -114,10 +115,18 @@ const ToDos = (props: Props) => {
                       setDuration(duration);
                     }}
                   >
-                    <h1 className="font-workS text-[#101828] text-[14px] font-medium">
+                    <h1
+                      className={`font-workS text-[#101828] text-[14px] font-medium ${
+                        todo.completed ? "line-through text-[#D0D5DD]" : ""
+                      }`}
+                    >
                       {todo.title}
                     </h1>
-                    <p className="font-workS font-normal text-[#475467]">
+                    <p
+                      className={`font-workS font-normal text-[#475467] ${
+                        todo.completed ? "line-through text-[#D0D5DD]" : ""
+                      } `}
+                    >
                       {duration}
                     </p>
                   </article>
